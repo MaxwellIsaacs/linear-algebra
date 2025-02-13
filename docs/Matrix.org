@@ -1,0 +1,42 @@
+* Matrix - Class
+:PROPERTIES:
+:Author: Maxwell Isaacs
+:Date: <2024-10-27>
+:Version: 1.0
+:END:
+#+OPTIONS: num:nil
+** Description
+The main abstract class for the Matrix object. Basically a huge container for an assortment of matrix functions that aren't nessicarily inherent to one type of matrix. For subclasses, see [[Child Classes][here]]
+
+** Fields
+- elements: double[][]
+- rows: int
+- cols: int
+- label?
+
+** Methods
+*** Basic Matrix Arithmetic
+**** public Matrix add (Matrix b)
++ adds matrix b to *this*
++ returns the sum matrix
+
+**** public Matrix addScalar (double s)
++ adds scalar s to *this*
++ returns the sum matrix
+
+*** private static double det (Matrix x)
++ not defined as abstract (because it isn't overridden), but it is abstracted away. This is an algorithm to recursively calculate the determinant of a matrix of dynamic shape.
++ returns the double value of the determinant
++ *o(n!)*, todo optimize this through triangle row reduction
+
+*** public double argmax ()
++ adds scalar s to *this*
++ returns the sum matrix
+
+
+
+***
+** Child Classes
+1. [[file::MatrixXd.org]]
+2. [[file::Matrix2d.org]]
+3. [[file::Matrix3d.org]]

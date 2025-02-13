@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-10-29 Tue 10:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.7;
+}
+
+h2, h3, h4 {
+    color: #2c3e50;
+    margin-top: 2em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.4em;
+    font-weight: 600;
+}
+
+p, li {
+    font-size: 1em;
+    margin-bottom: 1.2em;
+}
+
+code, pre {
+    background-color: #f0f4f8;
+    border-left: 3px solid #6879D0;
+    border-radius: 4px;
+    padding: 0.8em;
+    font-family: 'Fira Code', monospace;
+    overflow: auto;
+    margin: 1.2em 0;
+    font-size: 0.9em;
+    color: #333;
+}
+
+pre {
+    padding: 1em;
+}
+
+blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 1em;
+    color: #444;
+    background-color: #f9f9fc;
+    margin: 1.5em 0;
+    font-style: italic;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+th {
+    background-color: #f7f9fc;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.todo {
+    font-family: 'Courier New', monospace;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.VOCAB {
+    font-family: 'Courier New', monospace;
+    color: #6879D0;
+    font-weight: bold;
+}
+
+.done {
+    font-family: 'Courier New', monospace;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.priority {
+    font-family: 'Courier New', monospace;
+    color: #e67e22;
+}
+
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgec5f3e8">Matrix - Class</a>
+<ul>
+<li><a href="#orgd85dbcd">Description</a></li>
+<li><a href="#org3c838c0">Fields</a></li>
+<li><a href="#org417c3b2">Methods</a>
+<ul>
+<li><a href="#orgd5fe13f">Basic Matrix Arithmetic</a></li>
+<li><a href="#org29722ce">private static double det (Matrix x)</a></li>
+<li><a href="#org9ef729d">public double argmax ()</a></li>
+</ul>
+</li>
+<li><a href="#orga689485">Child Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgec5f3e8" class="outline-2">
+<h2 id="orgec5f3e8">Matrix - Class</h2>
+<div class="outline-text-2" id="text-orgec5f3e8">
+<p>
+:Author: Maxwell Isaacs
+:Date: <span class="timestamp-wrapper"><span class="timestamp">&lt;2024-10-27 Sun&gt;</span></span>
+:Version: 1.0
+</p>
+</div>
+<div id="outline-container-orgd85dbcd" class="outline-3">
+<h3 id="orgd85dbcd">Description</h3>
+<div class="outline-text-3" id="text-orgd85dbcd">
+<p>
+The main abstract class for the Matrix object. Basically a huge container for an assortment of matrix functions that aren&rsquo;t nessicarily inherent to one type of matrix. For subclasses, see <a href="#orga689485">here</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org3c838c0" class="outline-3">
+<h3 id="org3c838c0">Fields</h3>
+<div class="outline-text-3" id="text-org3c838c0">
+<ul class="org-ul">
+<li>elements: double[][]</li>
+<li>rows: int</li>
+<li>cols: int</li>
+<li>label?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org417c3b2" class="outline-3">
+<h3 id="org417c3b2">Methods</h3>
+<div class="outline-text-3" id="text-org417c3b2">
+</div>
+<div id="outline-container-orgd5fe13f" class="outline-4">
+<h4 id="orgd5fe13f">Basic Matrix Arithmetic</h4>
+<div class="outline-text-4" id="text-orgd5fe13f">
+</div>
+<ul class="org-ul">
+<li><a id="orge1b2d0b"></a>public Matrix add (Matrix b)<br />
+<div class="outline-text-5" id="text-orge1b2d0b">
+<ul class="org-ul">
+<li>adds matrix b to <b>this</b></li>
+<li>returns the sum matrix</li>
+</ul>
+</div>
+</li>
+<li><a id="org8c631fe"></a>public Matrix addScalar (double s)<br />
+<div class="outline-text-5" id="text-org8c631fe">
+<ul class="org-ul">
+<li>adds scalar s to <b>this</b></li>
+<li>returns the sum matrix</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org29722ce" class="outline-4">
+<h4 id="org29722ce">private static double det (Matrix x)</h4>
+<div class="outline-text-4" id="text-org29722ce">
+<ul class="org-ul">
+<li>not defined as abstract (because it isn&rsquo;t overridden), but it is abstracted away. This is an algorithm to recursively calculate the determinant of a matrix of dynamic shape.</li>
+<li>returns the double value of the determinant</li>
+<li><b>o(n!)</b>, todo optimize this through triangle row reduction</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9ef729d" class="outline-4">
+<h4 id="org9ef729d">public double argmax ()</h4>
+<div class="outline-text-4" id="text-org9ef729d">
+<ul class="org-ul">
+<li>adds scalar s to <b>this</b></li>
+<li>returns the sum matrix</li>
+</ul>
+
+
+
+<p>
+<b>*</b>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga689485" class="outline-3">
+<h3 id="orga689485">Child Classes</h3>
+<div class="outline-text-3" id="text-orga689485">
+<ol class="org-ol">
+<li><a href=":MatrixXd.html">:MatrixXd.html</a></li>
+<li><a href=":Matrix2d.html">:Matrix2d.html</a></li>
+<li><a href=":Matrix3d.html">:Matrix3d.html</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tla">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tla.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
