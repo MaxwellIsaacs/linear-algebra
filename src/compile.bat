@@ -7,5 +7,5 @@ if %error_level% == 0 (
   echo Compilation successful, running the program
   java Main
 ) else (
-  echo Shit failed
+  echo Compilation failed
 )

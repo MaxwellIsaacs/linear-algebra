@@ -1,16 +1,27 @@
 import java.util.function.Function;
 import java.util.Random;
 
+/**
+ * A mathematical matrix implementation supporting common linear algebra operations.
+ * This class provides methods for matrix arithmetic, transformations, and advanced operations
+ * such as determinant calculation and row echelon form reduction.
+ */
 public class Matrix {
   private double elements[][];
   private int rows;
   private int columns;
 
-
+  /**
+   * Constructs a new matrix with the specified dimensions.
+   * All elements are initialized to 0.0.
+   *
+   * @param rows the number of rows in the matrix
+   * @param columns the number of columns in the matrix
+   */
   public Matrix (int rows, int columns) {
     this.elements = new double [rows][columns];
     this.rows = rows;
-    this.columns = columns; 
+    this.columns = columns;
   }
 
   public int getRows () {
@@ -23,11 +34,11 @@ public class Matrix {
 
   // returns individual element
   public double getElement (int x, int y) {
-    if (x > rows) {
+    if (x >= rows) {
       Error.outOfBound("Get element", 'x');
       return -1;
     }
-    if (y > columns) {
+    if (y >= columns) {
       Error.outOfBound("Get element", 'y');
       return -1;
     }
@@ -118,7 +129,7 @@ public class Matrix {
   public static double det (Matrix x) {
     if (!Matrix.isSquare(x)){
       Error.incorrectMatrixShape ("square determinant");
-      return 69;
+      return Double.NaN;
     }
 
     if (x.getCols() == 2) {
@@ -247,7 +258,7 @@ public class Matrix {
     this.replaceRowWithVector (bIndex, temp);
   }
 
-  private double reciprical (double n) {
+  private double reciprocal (double n) {
     return 1 / n;
   }
 
@@ -256,7 +267,7 @@ public class Matrix {
     while (pivot < this.rows) {
         // turn the pivot into 1
         Vector pivotVector = grabRowVector (pivot);
-        double r = reciprical(pivotVector.getElement(pivot));
+        double r = reciprocal(pivotVector.getElement(pivot));
         pivotVector = pivotVector.scalarProduct (r);
         this.replaceRowWithVector (pivot, pivotVector);
       

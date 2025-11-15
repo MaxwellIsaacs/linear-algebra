@@ -1,16 +1,24 @@
 import java.util.Random;
 import java.util.function.Function;
 
-
+/**
+ * A mathematical vector implementation for linear algebra operations.
+ * Supports vector arithmetic, norms, scalar operations, and function applications.
+ */
 public class Vector {
 
   private double elements[];
   private int length;
 
+  /**
+   * Constructs a new vector with the specified size.
+   * All elements are initialized to 0.0.
+   *
+   * @param size the number of elements in the vector
+   */
   public Vector (int size) {
     this.elements = new double[size];
     this.length = size;
-    Pair<Integer, Integer> shape;
  }
 
   public double getElement (int index) {
@@ -107,9 +115,6 @@ public class Vector {
     return temp;
   }
 
-
-  //public double angleBetweenVectors (Vector b) {} 
-
   // returns a new vector of the linear combination between current vector and vector b 
   public static Vector linearCombo (double aCoeff, Vector a, double bCoeff, Vector b) {
     Vector temp1 = a.scalarProduct (aCoeff);
@@ -125,7 +130,7 @@ public class Vector {
 
   public Vector subtract (Vector b) {
     if (b.getLength() != this.length) {
-      Error.incorrectVectorShape("Vector add");
+      Error.incorrectVectorShape("Vector subtract");
       return null;
     }
 

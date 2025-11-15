@@ -1,15 +1,29 @@
- 
+ /**
+ * Utility class for error logging and matrix/vector debugging operations.
+ * Provides centralized error handling for the linear algebra library.
+ */
 public class Error {
+  /**
+   * Logs an error message with the specified severity level.
+   *
+   * @param status the error severity level (1=INFO, 2=WARNING, 3=CRITICAL, 4=blank line)
+   * @param message the error message
+   * @param function the name of the function where the error occurred
+   */
   public static void logError (int status, String message, String function) {
     switch (status) {
       case 1:
         System.out.println("INFO - " + function + " "  + message);
+        break;
       case 2:
         System.out.println("WARNING - "  + function + " " + message);
+        break;
       case 3:
         System.out.println("CRITICAL - " + function + " | " + message);
+        break;
       case 4:
         System.out.println("");
+        break;
     }
   }
 
@@ -32,7 +46,7 @@ public class Error {
   public static void print (Matrix m) {
     System.out.println("Matrix: ");
     for (int i = 0; i < m.getRows(); i++) {
-      for (int j = 0; i < m.getCols(); j++) {
+      for (int j = 0; j < m.getCols(); j++) {
         System.out.print(m.getElement(i,j) + " ");
       }
       System.out.println();
@@ -42,5 +56,4 @@ public class Error {
     String message = d == 'x' ? "Your row input was out of bounds" : "Your columns input was out of bounds";
     logError (3, message, function);
   }
-  //public static void  
 }
